@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MyBlog</title>
+    <title>我的简历</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./dist/css/swiper.min.css">
 
 </head>
 <body>
 <div class="wrap">
     <header>
         <div class="layout">
-            <a href="#" class="logo">MyBlog</a>
+            <a href="#" class="logo">个人简历</a>
             <ul class="header_nav">
                 <li><a href="https://github.com/ace15824843202">GitHub</a></li>
                 <li><a href="https://blog.csdn.net/ace15824843202">CSDN</a></li>
@@ -44,13 +47,14 @@
                 <h2>专业技能</h2>
                 <span>精通前端，涉略后端、超强学习能力</span>
             </div>
+
             <ul class="clearfix skill_list">
                 <li>
-                    <img src="image/web.png" alt="ps基础">
+                    <img src="image/web.png" alt="小程序+公众号开发">
                     <h3>小程序+公众号开发</h3>
                     <p>熟悉微信小程序的语法以及微信小程序模块化的开发熟悉微信公众号开发</p>
                 </li>
-                <li>
+            	<li>
                     <img src="image/css.png" alt="网页制作">
                     <h3>网页制作</h3>
                     <p>擅长 HTML/HTML5，CSS/CSS3，JavaScript，ES6 等前端技术，能够编写符合 W3C 标准的代码熟练使用前端响应式开发框架 Bootstrap，JQuery， Vue 前端框架熟悉针对主流浏览器的代码兼容和优化</p>
@@ -60,6 +64,8 @@
                     <h3>其他</h3>
                     <p>了解 LAMP 网站架构(Linux+Apache+Mysql+PHP)和PHP等后端技术了解React框架和react-native了解 photoshop的基本使用了解 SVN，GitHub代码管理工具接触过 Thinkphp后端框架</p>
                 </li>
+               
+                
             </ul>
         </div>
 
@@ -86,12 +92,22 @@
                 <h2>部分作品</h2>
                 <span>理论所不能解决的那些疑难，实践会给你解决。</span>
             </div>
-            <ul class="clearfix works_item">
-                <li><a href="#"><img src="image/weiguang.png" alt="作品1"><span>微光咨询平台</span></a></li>
-                <li><a href="#"><img src="image/game2.png" alt="作品2"><span>小程序-剪刀石头布</span></a></li>
-                <li><a href="#"><img src="image/music.png" alt="作品3"><span>小程序-掷骰子</span></a></li>
-                <li><a href="#"><img src="image/game1.png" alt="作品4"><span>小程序-chicken音乐播放器</span></a></li>
-            </ul>
+            <div class="swiper-container">
+                <ul class="swiper-wrapper clearfix works_item">
+                  <li class="swiper-slide"><a href="https://skylightconsulting.org/" target="_blank"><img src="image/weiguang.png" alt="作品1" ><span>微光咨询平台</span></a></li>
+                  <li class="swiper-slide"><a href="#"><img src="image/game2.png" alt="作品2"><span>小程序-chicken音乐播放器</span></a></li>
+                  <li class="swiper-slide"><img src="image/music.png" alt="作品3"><span>小程序-掷骰子</span></a></li>
+                  <li class="swiper-slide"><img src="image/game1.png" alt="作品4"><span>小程序-剪刀石头布</span></a></li>
+                  <li class="swiper-slide"><a href="https://39"><img src="image/book.png" alt="作品1"><span>图书专题</span></a></li>
+                  <li class="swiper-slide"><a href=""><img src="image/hotel.png" alt="作品1"><span>汇悦酒店</span></a></li>
+                  
+                </ul>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
         </div>
     </section>
     <section class="callme">
@@ -110,6 +126,27 @@
         </div>
     </section>
 </div>
+<!-- Swiper JS -->
+  <script src="./dist/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 
 </body>
 </html>
